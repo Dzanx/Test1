@@ -1,0 +1,88 @@
+/*** Certificate & Project Sections ***/
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.certificates {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.certificate-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out; /* Transisi halus */
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-item:nth-child(even) {
+  flex-direction: row-reverse; /* Membalikkan urutan konten */
+  background-color: #e9e9e9; /* Warna latar berbeda */
+}
+
+.certificate-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 160, 133, 0.1); /* Efek overlay saat hover */
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.certificate-item:hover::before {
+  transform: scale(1); /* Efek glow saat hover */
+}
+
+.certificate-item iframe {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item h4 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.certificate-item p {
+  margin: 10px 0 0;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.certificate-item:hover {
+  transform: scale(1.02); /* Sedikit membesar */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Bayangan lebih lembut */
+  background-color: #16a085; /* Warna latar berubah */
+  color: whitesmoke;
+}
+
+.certificate-item:hover iframe {
+  transform: scale(1.05) rotate(2deg); /* Efek zoom dan rotasi kecil */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Bayangan pada iframe */
+}
+
+.certificate-item:hover h4 {
+  color: var(--secondary-color); /* Warna teks berubah */
+  text-shadow: 0 0 10px rgba(22, 160, 133, 0.8); /* Glow effect */
+}
+
+.certificate-item:hover p {
+  color: #fff; /* Warna teks lebih terang */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
